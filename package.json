@@ -1,0 +1,44 @@
+{
+  "name": "contentful-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "node:start": "NODE_ENV=production node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/koa-shopify-auth": "^3.1.56",
+    "@svgr/webpack": "^5.1.0",
+    "@zeit/next-sass": "^1.0.1",
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "chalk": "^3.0.0",
+    "contentful": "^7.13.1",
+    "dotenv": "^8.2.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "koa": "^2.11.0",
+    "koa-session": "^5.13.1",
+    "next": "^9.2.1",
+    "node-sass": "^4.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-responsive-picture": "^3.2.2",
+    "styled-components": "^5.0.0",
+    "svg-inline-react": "^3.2.0",
+    "swr": "^0.1.16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/react": "^5.3.11",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.1"
+  }
+}

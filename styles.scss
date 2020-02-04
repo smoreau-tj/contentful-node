@@ -1,0 +1,21 @@
+@import-normalize;
+
+@font-face {
+    font-family: "Basetica";
+    src: url("https://cdn.shopify.com/s/files/1/2964/7474/files/basetica-regular_25f8fef7-96f4-43ed-ba5a-dc70e39cd7ec.woff?144428") format("woff");
+}
+
+
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Basetica";
+}
+
+@import './scss/app.scss';
+@import './scss/render.scss';
+
