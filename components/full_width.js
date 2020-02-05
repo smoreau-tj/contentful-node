@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Picture } from "react-responsive-picture";
+import TitleText from "./titleText";
+import SubtitleText from "./subtitle";
 
 const Container = styled.section`
   background-color: transparent;
@@ -10,20 +12,6 @@ const Container = styled.section`
     position: relative;
     margin: 24px auto;
     max-width: 1280px;
-  }
-`;
-
-const Title = styled.h1`
-  font-family: Basetica-Regular;
-  font-size: 40px;
-  color: #4d4d4d;
-  letter-spacing: -0.5px;
-  line-height: 46px;
-  text-shadow: 0 0 90px rgba(0, 0, 0, 0.5);
-  margin: 0 0 8px;
-
-  @media (min-width: 768px) {
-    color: #fff;
   }
 `;
 
@@ -59,16 +47,6 @@ const TextContainer = styled.div`
     padding: 0 75px;
   }
 `;
-const Subtitle = styled.span`
-  font-family: Basetica-Regular;
-  font-size: 16px;
-  color: #4d4d4d;
-  display: block;
-  margin: 0 0 16px;
-  @media (min-width: 768px) {
-    color: #fff;
-  }
-`;
 const Cta = styled.a`
   padding: 16px 64px;
   background-color: #fff;
@@ -90,22 +68,22 @@ const Cta = styled.a`
   text-transform: uppercase;
   font-family: Basetica Bold, sans-serif;
   background: #ffffff;
-  border: 1px solid transparent;
+  border: 1px solid ${props => props.mobileBorderColor};
   border-radius: 2px;
 `;
 
 export default function FullWidth({ info }) {
+  console.log("this is my fullwidth data:", info);
   return (
     <Container>
       <ImageContainer>
-        {console.log("this is my full panel", info)}
         <Picture
           sources={[
             {
               srcSet: `${
                 info.mobileImage && info.mobileImage.fields.file
                   ? info.mobileImage.fields.file.url
-                  : "https://place-hold.it/800x700"
+                  : "https://placehold.it/800x700"
               }`,
               media: "(max-width:767px)"
             },
@@ -113,7 +91,7 @@ export default function FullWidth({ info }) {
               srcSet: `${
                 info.desktopImage && info.desktopImage.fields.file
                   ? info.desktopImage.fields.file.url
-                  : "https://place-hold.it/1600x700"
+                  : "http://placehold.it/1600x700"
               }`,
               media: "(min-width: 768)"
             }
@@ -121,24 +99,56 @@ export default function FullWidth({ info }) {
           src={
             info.desktopImage && info.desktopImage.fields
               ? info.desktopImage.fields.file.url
-              : "https://place-hold.it/1600x700"
+              : "https://placehold.it/1600x700"
           }
         />
       </ImageContainer>
       <TextContainer>
-        <Title>{info.title ? info.title.fields.title : "Lorem Ipsum"}</Title>
-        <Subtitle>
-          {info.subtitle
-            ? info.subtitle[0].fields.text
-            : "lorem ipsum blah blah blah"}
-        </Subtitle>
+        <TitleText
+          title={
+            info.title_text ? info.title_text[0].fields.title : "Lorem Ipsum"
+          }
+          desktopColor="#fff"
+          desktopFont="Basetica"
+          desktopTextAlign="left"
+          mobileColor="#4d4d4d"
+          mobileFont="Basetica"
+          mobileTextAlign="center"
+          dropShadow={false}
+        />
+        <SubtitleText
+          text={
+            info.subtitle
+              ? info.subtitle[0].fields.text
+              : "lorem ipsum blah blah blah"
+          }
+        />
         {info.cta ? (
           info.cta.map((cta, index) => (
-            <Cta href={cta.fields.ctaUrl}>{cta.fields.ctaText}</Cta>
+            <Cta
+              key={cta.sys.id}
+              // desktopBackgroundColor={}
+              // desktopFont={}
+              // desktopColor={}
+              // desktopBorderColor={}
+              // desktopTextAlign={}
+              // mobileBackgroundColor={}
+              mobileBorderColor={
+                cta && cta.fields.ctaBorderColor
+                  ? cta.fields.ctaBorderColor
+                  : "#737373"
+              }
+              // mobileColor={}
+              // mobileTextAlign={}
+              href={cta.fields.ctaUrl}
+            >
+              {cta.fields.ctaText}
+            </Cta>
           ))
         ) : (
           <>
             <Cta
+              key={randomNumber(434)}
               href={"/"}
               desktopBackgroundColor={"#fff"}
               desktopFont={"Basetica"}

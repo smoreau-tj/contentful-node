@@ -17,6 +17,7 @@ export default function sideBySide({ info }) {
   return (
     <Wrapper>
       <Side
+        key={rightSide ? rightSide.sys.id : randomNumber(422)}
         title={
           rightSide && rightSide.fields.title
             ? rightSide.fields.title.fields.title
@@ -36,6 +37,7 @@ export default function sideBySide({ info }) {
         }
       />
       <Side
+        key={leftSide ? leftSide.sys.id : randomNumber(422)}
         title={
           leftSide && leftSide.fields.title
             ? leftSide.fields.title.fields.title

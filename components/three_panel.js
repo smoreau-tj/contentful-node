@@ -51,6 +51,7 @@ export default function threePanel({ info }) {
           info.panels.map((item, i) => {
             return (
               <Panel
+                key={item ? item.sys.id : randomNumber(323)}
                 image={item.fields.panelImage.fields.file.url}
                 text={item.fields.panelName}
               />

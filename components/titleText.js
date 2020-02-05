@@ -22,13 +22,13 @@ export default function TitleText(props) {
   console.info("info", props.desktopColor);
   return (
     <Title
-      desktopColor={props.desktopColor}
-      desktopFont={props.desktopFont}
-      desktopTextAlign={props.desktopTextAlign}
-      mobileColor={props.mobileColor}
-      mobileTextAlign={props.mobileTextAlign}
-      mobileFont={props.mobileFont}
-      dropShadow={props.dropShadow}
+      desktopColor={props.desktopColor || "#737373"}
+      desktopFont={props.desktopFont || "Basetica"}
+      desktopTextAlign={props.desktopTextAlign || "left"}
+      mobileColor={props.mobileColor || "#737373"}
+      mobileTextAlign={props.mobileTextAlign || "center"}
+      mobileFont={props.mobileFont || "Bastica"}
+      dropShadow={props.dropShadow || false}
     >
       {props.title}
     </Title>
