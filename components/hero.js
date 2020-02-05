@@ -98,20 +98,20 @@ export default function Hero({ info }) {
             srcSet={
               info.mobileImage
                 ? info.mobileImage.fields.file.url
-                : "https://place-hold.it/800x700"
+                : "https://placehold.it/800x700"
             }
             media="(min-width: 992px)"
             srcSet={
               info.desktopImage
                 ? info.desktopImage.fields.file.url
-                : "https://place-hold.it/1600x700"
+                : "https://placehold.it/1600x700"
             }
           />
           <img
             src={
               info.mobileImage
                 ? info.mobileImage.fields.file.url
-                : "https://place-hold.it/800x700"
+                : "https://placehold.it/800x700"
             }
             className="home-hero__image"
           />
@@ -144,6 +144,7 @@ export default function Hero({ info }) {
         {info.cta ? (
           info.cta.map((cta, index) => (
             <Cta
+              key={cta.sys.id || randomNumber(423)}
               href={cta.fields.ctaUrl}
               desktopBackgroundColor={cta.fields.backgroundColor || "#fff"}
               desktopFont={cta.fields.fontStyle || "Basetica"}
@@ -164,6 +165,7 @@ export default function Hero({ info }) {
         ) : (
           <>
             <Cta
+              key={randomNumber(423)}
               href={"/"}
               desktopBackgroundColor={"#fff"}
               desktopFont={"Basetica"}
@@ -177,6 +179,7 @@ export default function Hero({ info }) {
               Cta
             </Cta>
             <Cta
+              key={randomNumber(423)}
               href={"/"}
               desktopBackgroundColor={"#fff"}
               desktopFont={"Basetica"}
