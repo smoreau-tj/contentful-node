@@ -14,6 +14,10 @@ const Wrapper = styled.section`
 
 export default function sideBySide({ info }) {
   const { leftSide, rightSide } = info;
+
+  function randomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
   return (
     <Wrapper>
       <Side

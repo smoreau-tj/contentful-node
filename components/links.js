@@ -3,7 +3,9 @@ import Link from "next/link";
 
 const ContentLink = props => {
   console.log(props);
-
+  function randomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
   return (
     <>
       <li>

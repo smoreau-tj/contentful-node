@@ -6,6 +6,7 @@ const Wrapper = styled.a`
 `;
 
 const Button = styled.span`
+  border: ${props => props.mobileborderColor};
   padding: 20px;
   width: auto;
   min-width: 220px;
@@ -30,7 +31,7 @@ export default function CtaButton({ href, text }) {
   return (
     <Wrapper href={href}>
       <Button
-        mobileborder={mobileborderColor || "transparent"}
+        mobileborderColor={mobileborderColor || "transparent"}
         mobileColor={mobileColor || "#737373"}
         mobileFont={mobileFont || "Basetica"}
         mobileTextAlignment={mobileTextAlignment || "center"}

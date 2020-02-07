@@ -74,6 +74,9 @@ const Cta = styled.a`
 
 export default function FullWidth({ info }) {
   console.log("this is my fullwidth data:", info);
+  function randomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
   return (
     <Container>
       <ImageContainer>

@@ -12,6 +12,11 @@ const Page = props => {
   // const { landingPageTitle } = props.page;
   const { id } = router.query;
   console.log(props);
+
+  function randomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   const typeToRender = (type, key, data) => {
     switch (type) {
       case "heroModule":

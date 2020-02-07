@@ -86,6 +86,10 @@ const Cta = styled.a`
   }
 `;
 export default function Hero({ info }) {
+  function randomNumber(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   return (
     <Container>
       {info

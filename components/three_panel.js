@@ -41,6 +41,7 @@ const PanelWrapper = styled.div`
 
 export default function threePanel({ info }) {
   console.log("this is my threePanel: ", info);
+
   return (
     <Container>
       <TitleWrapper>
