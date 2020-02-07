@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { client } from "../../lib/connect";
+import { fetchContentful } from "../../lib/connect";
 import Hero from "../../components/hero";
 import FullWidth from "../../components/full_width";
 import SidebySide from "../../components/side_by_side";
@@ -8,6 +8,7 @@ import StaticHeader from "../../components/static-header";
 import StaticFooter from "../../components/static-footer";
 
 const Page = props => {
+  const client = fetchContentful("preview");
   const router = useRouter();
   // const { landingPageTitle } = props.page;
   const { id } = router.query;
