@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { client } from "../lib/connect";
+import { fetchContentful } from "../lib/connect";
 import ContentLink from "../components/links";
 import LandingPage from "../components/landing";
 
+const client = fetchContentful();
 const Index = () => {
   async function fetchEntries() {
     const entries = await client.getEntries({

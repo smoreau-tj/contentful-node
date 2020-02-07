@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import { client } from "../lib/connect";
-import ContentLink from "../components/links";
+import { fetchContentful } from "../lib/connect";
 import LandingPage from "../components/landing";
 
+const client = fetchContentful("production");
 const Sampler = () => {
   async function fetchEntries() {
     const entries = await client.getEntries({
